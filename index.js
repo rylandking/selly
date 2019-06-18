@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 1337;
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -12,11 +12,9 @@ app.get('/', function(req, res) {
   res.status(200).send('Hello world');
 });
 
-app.listen(3000, function() {
-  console.log('Yep! Listening on port 5000');
+app.listen(port, function() {
+  console.log('Yep! Listening on port ' + port);
 })
-
-// alert("Hello world!");
 
 
 // Sellybot code
