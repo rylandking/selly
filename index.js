@@ -1,33 +1,33 @@
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const app = express();
-// const port = process.env.PORT || 1337;
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = process.env.PORT || 1337;
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+//Check if server is listening
+app.get('/', function(req, res) {
+  res.status(200).send('Hello world');
+});
+
+app.listen(port, function() {
+  console.log('Yep! Listening on port ' + port);
+})
+
+// const http = require('http');
+// const port = process.env.PORT || 3000
 //
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
-//
-// //Check if server is listening
-// app.get('/', function(req, res) {
-//   res.status(200).send('Hello world');
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/html');
+//   res.end('<h1>Hello World</h1>');
 // });
 //
-// app.listen(port, function() {
-//   console.log('Yep! Listening on port ' + port);
-// })
-
-const http = require('http');
-const port = process.env.PORT || 3000
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-});
+// server.listen(port,() => {
+//   console.log(`Server running at port `+port);
+// });
 
 
 // Sellybot code
