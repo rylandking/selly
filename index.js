@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 3000;
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
   res.status(200).send('Hello world');
 });
 
-app.listen(process.env.PORT || 5000, function() {
+app.listen(3000, function() {
   console.log('Yep! Listening on port 5000');
 })
 
