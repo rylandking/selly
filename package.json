@@ -1,7 +1,7 @@
 {
-  "name": "slackjokebot",
+  "name": "selly",
   "version": "1.0.0",
-  "description": "Slackbot that tells jokes.",
+  "description": "Selly helps you sell Slack.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
