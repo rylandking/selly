@@ -12,8 +12,8 @@ app.get('/', function(req, res) {
   res.status(200).send('Hello world');
 });
 
-app.listen(port, function() {
-  console.log('Yep! I\m listening on port' + port);
+app.listen(process.env.PORT || 5000, function() {
+  console.log('Yep! Listening on port 5000');
 })
 
 // alert("Hello world!");
