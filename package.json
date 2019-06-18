@@ -1,0 +1,16 @@
+{
+  "name": "slackjokebot",
+  "version": "1.0.0",
+  "description": "Slackbot that tells jokes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ryland King",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "slackbots": "^1.2.0"
+  }
+}
