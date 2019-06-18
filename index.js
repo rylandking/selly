@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = required('body-parser');
+const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -16,7 +16,7 @@ app.listen(port, function() {
   console.log('Yep! I\m listening on port' + port);
 })
 
-alert("Hello world!");
+// alert("Hello world!");
 
 
 // Sellybot code
