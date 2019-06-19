@@ -36,7 +36,7 @@ const slackBot = require('slackbots');
 const axios = require('axios');
 
 const bot = new slackBot ({
-  token: 'xoxb-655020203907-655007633314-NhFI8ngmIWhI2Tltla8ntLHm',
+  token: 'xoxb_TOKEN',
   name: 'selly'
 });
 
@@ -59,53 +59,76 @@ bot.on('error', function(err) {
 
 // Message Handler
 bot.on('message', function(data) {
-  if (data.type !== 'message') {
+
+  if (data.type !== 'message' || data.subtype === 'bot_message') {
     return;
   }
 
-  handleMessage(data.text);
+  if (data.text.includes('<@UK907JM98>')) {
+    handleMessage(data.text);
+  }
+
 });
 
 // Response to Data (message and data.text are related)
 function handleMessage(message) {
+  message = message.toLowerCase();
+
   if (message.includes(' joke')) {
     randomJoke();
-  }
-
-  if (message.includes(' test')) {
-    testMessage();
-  } else if (message.includes( ' sales team')) {
+  } else if (message.includes(' sales team')) {
     salesTeamMessage();
-  } else if (message.includes( ' engineering team')) {
+  } else if (message.includes(' engineering team')) {
     engTeamMessage();
-  } else if (message.includes( ' HR team')) {
+  } else if (message.includes(' HR team')) {
     hrTeamMessage();
-  } else if (message.includes( ' marketing team')) {
+  } else if (message.includes(' marketing team')) {
     marketingTeamMessage();
-  } else if (message.includes( ' support team')) {
+  } else if (message.includes(' support team')) {
     supportTeamMessage();
-  } else if (message.includes( ' /google drive')) {
+  } else if (message.includes(' google drive')) {
     googleDriveMessage();
-  } else if (message.includes( ' /github')) {
+  } else if (message.includes(' github')) {
     gitHubMessage();
-  } else if (message.includes( ' /trello')) {
+  } else if (message.includes(' trello')) {
     trelloMessage();
-  } else if (message.includes( ' /zoom')) {
+  } else if (message.includes(' zoom')) {
     zoomMessage();
-  } else if (message.includes( ' /outlook calendar')) {
+  } else if (message.includes(' outlook calendar')) {
     outlookCalendarMessage();
-  } else if (message.includes( ' /google calendar')) {
+  } else if (message.includes(' google calendar')) {
     googleCalendarMessage();
-  } else if (message.includes( ' /gmail')) {
+  } else if (message.includes(' gmail')) {
     gmailMessage();
-  } else if (message.includes( ' /salesforce')) {
+  } else if (message.includes(' salesforce')) {
     salesForceMessage();
-  } else if (message.includes( ' /outlook')) {
+  } else if (message.includes(' outlook')) {
     outlookMessage();
+  } else {
+    unknownKeyword();
   }
 
 
 
+}
+
+
+// Unknown Keyword Response
+function unknownKeyword() {
+  const params = { };
+
+  const response = `
+  *🤷‍♀️ Hmm, I don't recognize what you're asking about.*\n
+   Try another keyword or phrase and I'll do my best to get you your selling points.\n
+   If I don't find them, please <mailto:helloryland@gmail.com|email me> with the keyword you're searching for. I'll add it so I can help you in the future.💪\n
+   Trying my best,\n
+   Selly 🧞‍♀️
+  `
+  bot.postMessageToChannel(
+    'ask-selly',
+    `${response}`,
+    params
+  );
 }
 
 // Sales Team selling points
@@ -113,10 +136,10 @@ function salesTeamMessage() {
   const params = { };
 
   const response = `
-  *Here's selling points for sales orgs*\n
+  *Here's selling points for sales teams*\n
     *🤝 Win More Deals*\n>Less time digging through account details and more time addressing customer needs, moving deals forward.\n
     *🏎 Respond to Opportunities Faster*\n>Quickly access documents and communication with others cutting down time to follow up with leads and put together proposals.\n>21% faster response to sales leads (<chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|IDC report>).\n
-    *🙌 Encourage Transparency & Collaboration *\n>Channels increase depth and breadth of info they have access to, even across verticals .\n
+    *🙌 Encourage Transparency & Collaboration *\n>Channels increase the depth and breadth of information sales teams have access to, even across verticals .\n
   <chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|More info on sales pitches>\n
   `
   bot.postMessageToChannel(
@@ -131,7 +154,7 @@ function engTeamMessage() {
   const params = { };
 
   const response = `
-  *Here's selling points for eng orgs*\n
+  *Here's selling points for eng teams*\n
     *🏎 Speeds Up Development*\n>Centralized tools, automated workflows, and reduced context switching between applications result in more products and services delivered on time.\n>24% increase in features delivered on time (<chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|IDC report>).\n
     *🛠 Automates Workflows with Integrations*\n>Jira and GitHub integrations allow developers to handle non-code work within Slack. Less time spent switching between applications.\n
     *🐛 Fix Bugs Faster*\n>Centralizes feedback and increases discoverability of relevant info. Engineers get context needed to fix bugs more quickly and accurately.\n
@@ -149,7 +172,7 @@ function hrTeamMessage() {
   const params = { };
 
   const response = `
-  *Here's selling points for HR orgs*\n
+  *Here's selling points for HR teams*\n
     *🕵️‍♀️ Recruit More Effectively*\n>Move candidates through recruiting pipeline more effectively with integrations.\n
     *👨‍💻 Onboard More Quickly*\n>New employees quickly get up to speed with all important info and communication accessible in channel histories.\n>24% faster to reach full employee productivity (<chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|IDC report>).\n
     *🥳 Happier Employees Over Time*\n>Increased access to cross-vertical teams helps facilitate culture across the company. Allows everyone who needs to be involved to be collaborating and accessible.\n
@@ -167,7 +190,7 @@ function marketingTeamMessage() {
   const params = { };
 
   const response = `
-  *Here's selling points for marketing orgs*\n
+  *Here's selling points for marketing teams*\n
     *⏱ Reduce Approval Times*\n>Less time budget approvals or creative reviews, which means quicker campaign cycles and in turn more campaigns per year.\n>16% faster execution of marking campaigns (<chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|IDC report>).\n
     *🙌 Improves Collaboration with External Agencies*\n>Less time asking for latest versions with one historical record for every campaign shared by all involved (even external partners!).\n
   <chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|More info on marketing pitches>\n
@@ -184,7 +207,7 @@ function supportTeamMessage() {
   const params = { };
 
   const response = `
-  *Here's selling points for support orgs*\n
+  *Here's selling points for support teams*\n
     *🤸‍♂️ Resolve More Tickets*\n>Use integrations to triage issues faster, monitor social media and even respond to customer right from Slack.\n>31% average reduction in ticket resolution time (<chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|IDC report>).\n
     *💌 Resolve Tickets More Effectively*\n>Use the collective knowledge base of Slack’s channels to find and surface the best info without ever switching windows.\n
   <chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://a.slack-edge.com/202df/marketing/downloads/resources/rebrand/IDC_The_Business_Value_of_Slack.pdf|More info on support pitches>\n
@@ -330,7 +353,7 @@ function salesForceMessage() {
   const response = `
   *Here's selling points for Salesforce*\n
     🕵️‍♀️ Search Salesforce for accounts, opportunities and leads without leaving Slack. Quickly share details with coworkers.\n
-    📲  View information about any Account, Lead, Opportunity, or Contact just by pasting a Salesforce URL in Slack.\n
+    📲  View information about any Account, Lead, Opportunity, or Contact just by pasting a Salesforce URL in Slack.\n
   <https://slack.com/apps/A2DAS7NNR-salesforce|More info about Salesforce>\n
   `
   bot.postMessageToChannel(
