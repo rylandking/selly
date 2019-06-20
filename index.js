@@ -27,10 +27,7 @@ const bot = new slackBot ({
 });
 
 bot.on('start', function() {
-  const params = {
-    // icon_emoji: ':joy_cat:'
-  };
-
+  const params =
   bot.postMessageToChannel(
     'ask-selly',
     '👋 I\'m Selly!\n\n Need selling points for a specific integration, feature or business type? Ask me or just type a few keywords.\n\n For example: *What\'s the value of our Salesforce integration?* Or simply *Salesforce integration*.\n\n I\'m just a bot, but I\'ll do my best to help. If I don\'t know the answer, I\'ll link you to the Help Center.\n\n Talk more soon!🧞‍♀️💪',
@@ -401,33 +398,13 @@ function outlookSellingPoints() {
   );
 }
 
-// This is a Test Message
-function testMessage() {
-  const params = { };
-
-  const response = `
-  *TITLE*\n
-    *1️⃣ Title1*\n>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.\n
-    *2️⃣ Title2*\n>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\n
-    *3️⃣ Title3*\n>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.\n
-  <https://surftriplist.com|Learn more>
-  `
-  bot.postMessageToChannel(
-    'ask-selly',
-    `${response}`,
-    params
-  );
-}
-
 // Tell a Chuck Norris joke
 function chuckNorrisJoke() {
   axios.get('http://api.icndb.com/jokes/random')
     .then(res => {
       const joke = res.data.value.joke;
 
-      const params = {
-        // icon_emoji: ':joy_cat:'
-      };
+      const params = { };
 
       bot.postMessageToChannel(
         'ask-selly',
@@ -443,9 +420,7 @@ function yoMamaJoke() {
     .then(res => {
       const joke = res.data.joke;
 
-      const params = {
-        // icon_emoji: ':joy_cat:'
-      };
+      const params = { };
 
       bot.postMessageToChannel(
         'ask-selly',
