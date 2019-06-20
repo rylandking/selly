@@ -16,27 +16,13 @@ app.listen(port, function() {
   console.log('Yep! Listening on port ' + port);
 })
 
-// const http = require('http');
-// const port = process.env.PORT || 3000
-//
-// const server = http.createServer((req, res) => {
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/html');
-//   res.end('<h1>Hello World</h1>');
-// });
-//
-// server.listen(port,() => {
-//   console.log(`Server running at port `+port);
-// });
-
-
 // Sellybot code
 
 const slackBot = require('slackbots');
 const axios = require('axios');
 
 const bot = new slackBot ({
-  token: 'xoxb_TOKEN',
+  token: 'xoxb-655020203907-655007633314-MGDNpzMaDXIpi9NAFQI5nYoB',
   name: 'selly'
 });
 
@@ -59,11 +45,11 @@ bot.on('error', function(err) {
 
 // Message Handler
 bot.on('message', function(data) {
-
+  // Don't take action if event is NOT a message OR is a bot_message from Selly
   if (data.type !== 'message' || data.subtype === 'bot_message') {
     return;
   }
-
+  // If '@selly' is mentioned in the message, run handleMessage
   if (data.text.includes('<@UK907JM98>')) {
     handleMessage(data.text);
   }
@@ -72,58 +58,93 @@ bot.on('message', function(data) {
 
 // Response to Data (message and data.text are related)
 function handleMessage(message) {
+  // Turn the message into all lowercase characters
   message = message.toLowerCase();
 
-  if (message.includes(' joke')) {
+  // Set keywords
+  var jokeKeywords = ["joke", "jokes", "funny", "laugh"];
+  var salesKeywords = ["sales", "sales team", "sales teams", "sales company", "sales companies", "sales org", "sales organization", "sales organizations"];
+  var engKeywords = ["eng"];
+  var hrKeywords = ["hr"];
+  var marketingKeywords = ["marketing"];
+  var supportKeywords = ["support"];
+  var googleDriveKeywords = ["google drive"];
+  var gitHubKeywords = ["github"];
+  var trelloKeywords = ["trello"];
+  var zoomKeywords = ["zoom"];
+  var outlookCalendarKeywords = ["outlook calendar"];
+  var googleCalendarKeywords = ["google calendar"];
+  var gmailKeywords = ["gmail"];
+  var salesforceKeywords = ["salesforce"];
+  var outlookKeywords = ["outlook"];
+
+  // Check if message contains any jokeKeywords terms? If yes, jokeCheck == true. If no, jokeCheck == false.
+  var jokeCheck = jokeKeywords.some(el => message.includes(el));
+  var salesCheck = salesKeywords.some(el => message.includes(el));
+  var engCheck = engKeywords.some(el => message.includes(el));
+  var hrCheck = hrKeywords.some(el => message.includes(el));
+  var marketingCheck = marketingKeywords.some(el => message.includes(el));
+  var supportCheck = supportKeywords.some(el => message.includes(el));
+  var supportCheck = supportKeywords.some(el => message.includes(el));
+  var googleDriveCheck = googleDriveKeywords.some(el => message.includes(el));
+  var gitHubCheck = gitHubKeywords.some(el => message.includes(el));
+  var trelloCheck = trelloKeywords.some(el => message.includes(el));
+  var zoomCheck = zoomKeywords.some(el => message.includes(el));
+  var outlookCalendarCheck = outlookCalendarKeywords.some(el => message.includes(el));
+  var googleCalendarCheck = googleCalendarKeywords.some(el => message.includes(el));
+  var gmailCheck = gmailKeywords.some(el => message.includes(el));
+  var salesforceCheck = salesforceKeywords.some(el => message.includes(el));
+  var outlookCheck = outlookKeywords.some(el => message.includes(el));
+
+  // If ___Check == true, respond with the relevant selling points
+  if (jokeCheck == true) {
     randomJoke();
-  } else if (message.includes(' sales team')) {
-    salesTeamMessage();
-  } else if (message.includes(' engineering team')) {
-    engTeamMessage();
-  } else if (message.includes(' HR team')) {
-    hrTeamMessage();
-  } else if (message.includes(' marketing team')) {
-    marketingTeamMessage();
-  } else if (message.includes(' support team')) {
-    supportTeamMessage();
-  } else if (message.includes(' google drive')) {
-    googleDriveMessage();
-  } else if (message.includes(' github')) {
-    gitHubMessage();
-  } else if (message.includes(' trello')) {
-    trelloMessage();
-  } else if (message.includes(' zoom')) {
-    zoomMessage();
-  } else if (message.includes(' outlook calendar')) {
-    outlookCalendarMessage();
-  } else if (message.includes(' google calendar')) {
-    googleCalendarMessage();
-  } else if (message.includes(' gmail')) {
-    gmailMessage();
-  } else if (message.includes(' salesforce')) {
-    salesForceMessage();
-  } else if (message.includes(' outlook')) {
-    outlookMessage();
+  } else if (salesforceCheck == true) {
+    salesforceSellingPoints();
+  } else if (salesCheck == true) {
+    salesSellingPoints();
+  } else if (engCheck == true) {
+    engSellingPoints();
+  } else if (hrCheck == true) {
+    hrSellingPoints();
+  } else if (marketingCheck == true) {
+    marketingSellingPoints();
+  } else if (supportCheck == true) {
+    supportSellingPoints();
+  } else if (googleDriveCheck == true) {
+    googleDriveSellingPoints();
+  } else if (gitHubCheck == true) {
+    gitHubSellingPoints();
+  } else if (trelloCheck == true) {
+    trelloSellingPoints();
+  } else if (zoomCheck == true) {
+    zoomSellingPoints();
+  } else if (outlookCalendarCheck == true) {
+    outlookCalendarSellingPoints();
+  } else if (googleCalendarCheck == true) {
+    googleCalendarSellingPoints();
+  } else if (gmailCheck == true) {
+    gmailSellingPoints();
+  } else if (outlookCheck == true) {
+    outlookSellingPoints();
   } else {
-    unknownKeyword();
+    unknownKeywordsResponse();
   }
-
-
 
 }
 
 
 // Unknown Keyword Response
-function unknownKeyword() {
+function unknownKeywordsResponse() {
   const params = { };
 
   const response = `
-  *🤷‍♀️ Hmm, I don't recognize what you're asking about.*\n
-   Try another keyword or phrase and I'll do my best to get you your selling points.\n
-   If I don't find them, please <mailto:helloryland@gmail.com|email me> with the keyword you're searching for. I'll add it so I can help you in the future.💪\n
-   Trying my best,\n
-   Selly 🧞‍♀️
-  `
+  *🤷‍♀️ Hmm, I don't recognize what you're looking for.*\n
+  Try another keyword or phrase and I'll do my best to get you your selling points.\n
+  If I don't find them, please <mailto:helloryland@gmail.com|email me> with the keyword you're searching for. I'll add it so I can help you in the future.💪\n
+  Trying my best,\n
+  Selly 🧞‍♀️`
+
   bot.postMessageToChannel(
     'ask-selly',
     `${response}`,
@@ -132,7 +153,7 @@ function unknownKeyword() {
 }
 
 // Sales Team selling points
-function salesTeamMessage() {
+function salesSellingPoints() {
   const params = { };
 
   const response = `
@@ -150,7 +171,7 @@ function salesTeamMessage() {
 }
 
 // Eng Team selling points
-function engTeamMessage() {
+function engSellingPoints() {
   const params = { };
 
   const response = `
@@ -168,7 +189,7 @@ function engTeamMessage() {
 }
 
 // HR Team selling points
-function hrTeamMessage() {
+function hrSellingPoints() {
   const params = { };
 
   const response = `
@@ -186,7 +207,7 @@ function hrTeamMessage() {
 }
 
 // Marketing Team selling points
-function marketingTeamMessage() {
+function marketingSellingPoints() {
   const params = { };
 
   const response = `
@@ -203,7 +224,7 @@ function marketingTeamMessage() {
 }
 
 // Support Team selling points
-function supportTeamMessage() {
+function supportSellingPoints() {
   const params = { };
 
   const response = `
@@ -220,7 +241,7 @@ function supportTeamMessage() {
 }
 
 // Google Drive selling points
-function googleDriveMessage() {
+function googleDriveSellingPoints() {
   const params = { };
 
   const response = `
@@ -237,7 +258,7 @@ function googleDriveMessage() {
 }
 
 // Github selling points
-function gitHubMessage() {
+function gitHubSellingPoints() {
   const params = { };
 
   const response = `
@@ -255,7 +276,7 @@ function gitHubMessage() {
 }
 
 // Trello selling points
-function trelloMessage() {
+function trelloSellingPoints() {
   const params = { };
 
   const response = `
@@ -273,7 +294,7 @@ function trelloMessage() {
 }
 
 // Zoom selling points
-function zoomMessage() {
+function zoomSellingPoints() {
   const params = { };
 
   const response = `
@@ -291,7 +312,7 @@ function zoomMessage() {
 }
 
 // Outlook Calendar selling points
-function outlookCalendarMessage() {
+function outlookCalendarSellingPoints() {
   const params = { };
 
   const response = `
@@ -310,7 +331,7 @@ function outlookCalendarMessage() {
 }
 
 // Google Calendar selling points
-function googleCalendarMessage() {
+function googleCalendarSellingPoints() {
   const params = { };
 
   const response = `
@@ -330,7 +351,7 @@ function googleCalendarMessage() {
 }
 
 // Gmail selling points
-function gmailMessage() {
+function gmailSellingPoints() {
   const params = { };
 
   const response = `
@@ -347,7 +368,7 @@ function gmailMessage() {
 }
 
 // Salesforce selling points
-function salesForceMessage() {
+function salesforceSellingPoints() {
   const params = { };
 
   const response = `
@@ -364,7 +385,7 @@ function salesForceMessage() {
 }
 
 // Outlook selling points
-function outlookMessage() {
+function outlookSellingPoints() {
   const params = { };
 
   const response = `
