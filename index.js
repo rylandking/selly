@@ -23,7 +23,7 @@ const slackBot = require('slackbots');
 const axios = require('axios');
 
 const bot = new slackBot ({
-  token: 'xoxb-655020203907-655007633314-kb8AQcXjdJskUvXU9UcGSAk9',
+  token: 'TOKEN',
   name: 'selly'
 });
 
@@ -1071,50 +1071,62 @@ const jiraMessage = `
 
 const jiraIntegrationMessage = `
 *Here's selling points for JIRA Integration+*\n
-  📲 Create and assign JIRA tickets directly from your conversation about the issue in Slack.\n
+  📲 Create, Assign, Comment, Log time, Transition, Edit Jira tickets without having to switch windows away from Slack.\n
+  💪 Replace Jira notification emails with actionable Slack messages where your team can converse about next steps.\n
+  🔔 Get notifications when things change in Jira. Set it to a specific Slack channel so it doesn't bog down conversation space.\n
 <https://slack.com/apps/A0Z9RG265-jira-integration|More info about JIRA Integration+>\n
 `;
 
 const loomMessage = `
 *Here's selling points for Loom*\n
-  📲 Create and assign JIRA tickets directly from your conversation about the issue in Slack.\n
+  📲 Send your Loom video to your Slack conversation space right from the Loom experience — no switching apps or upload required.\n
+  ▶️ Loom videos play inline with your conversation so your coworkers can hear your voice and see your face without leaving the Slack experience.\n
+  🏁 Start your Loom videos from a specific timestamp (by simply typing @ or # in a comment or reply) so your coworkers don't waste time watching unnecessary segments of the video.\n
 <https://slack.com/apps/A9G1TH4S2-loom|More info about Loom>\n
 `;
 
 const quipMessage = `
 *Here's selling points for Quip*\n
-  📲 Create and assign JIRA tickets directly from your conversation about the issue in Slack.\n
+  🌅 Preview links to Quip docs within Slack channels enabling conversations to start without having to switch windows to Quip.\n
+  📲 Create new Quip docs within Slack channels using '/quip new' saving valuable seconds.\n
+  🔔 Receive notifications when Quip docs change in Slack channels that enable conversations and don't clutter your normal communication channels.\n
 <https://slack.com/apps/A0M22HR1P-quip|More info about Quip>\n
 `;
 
 const adobeCreativeMessage = `
 *Here's selling points for Adobe Creative Cloud*\n
-  📲 Create and assign JIRA tickets directly from your conversation about the issue in Slack.\n
+  📲 Share the assets saved in Creative Cloud storage or applications (Photoshop, Illustrator, InDesign, etc) into any Slack conversation in a quick click.\n
+  🔔 Stay up-to-date when comments are made on XD prototypes and design specs with notifications to specific Slack channels.\n
+  🙌 Add collaborators to your private XD prototypes and design specs right from where the conversation is happening within Slack.\n
 <https://slack.com/apps/A7P35MCT0-adobe-creative-cloud|More info about Adobe Creative Cloud>\n
 `;
 
 const smartsheetMessage = `
 *Here's selling points for Smartsheet*\n
-  📲 Create and assign Smartsheet tickets directly from your conversation about the issue in Slack.\n
+  📲 Take action on important requests from Smartsheet, like creating an alert, without ever having to leave Slack.\n
+  🛠 Automate repetitive processes, like notifying coworkers when certain tasks are ready to be done.\n
+  🔔 Set Smartsheet alerts to be automatically sent to Slack channels so you and your team have visibility into your projects as they change.\n
+  🤑 Paid accounts only.\n
 <https://slack.com/apps/A9AESRU12-smartsheet|More info about Smartsheet>\n
 `;
 
 const rocketbookMessage = `
 *Here's selling points for Rocketbook*\n
-  📲 Create and assign Rocketbook tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A2RPP3NFR-jira-cloud|More info about Rocketbook>\n
+  📲 Scan handwritten notes in your Rocketbook pages and send them to your teammates in Slack in less than a few clicks. Your team can take the conversation from there.\n
+<https://slack.com/apps/A1M8XPJVD-rocketbook|More info about Rocketbook>\n
 `;
 
 const weTransferMessage = `
 *Here's selling points for weTransfer*\n
-  📲 Create and assign weTransfer tickets directly from your conversation about the issue in Slack.\n
+  👋 Share your ideas with everyone without leaving the comfort of Slack so you can get right back to your flow and conversations.\n
+  📲 Upload multiple files without ever needing to leave Slack by using the simple slash-command '/we'.\n
 <https://slack.com/apps/AAB31CEKS-wetransfer|More info about weTransfer>\n
 `;
 
 const karmabotMessage = `
 *Here's selling points for Karmabot*\n
   📲 Create and assign Karmabot tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A2RPP3NFR-jira-cloud|More info about Karmabot>\n
+<https://slack.com/apps/A22354MPX-karmabot|More info about Karmabot>\n
 `;
 
 const olaphMessage = `
@@ -1125,139 +1137,206 @@ const olaphMessage = `
 
 const delightedMessage = `
 *Here's selling points for Delighted*\n
-  📲 Create and assign Delighted tickets directly from your conversation about the issue in Slack.\n
+  🗣 Delighted is the fastest and easiest way to gather actionable feedback from customer.\n
+  📲 Send the feedback collected by Delighted right into Slack channels in real time so your teams can stay up-to-date and start necessary conversations.\n
+  🔁 Send feedback from Promoters, Passives, Detractors or Trends to any channel enabling action without needing to toggle between windows.\n
+  📊 Send a daily summary of your NPS and previous day's activity.\n
 <https://slack.com/apps/A04S59T4G-delighted|More info about Delighted>\n
 `;
 
 const allyMessage = `
 *Here's selling points for Ally*\n
-  📲 Create and assign Ally tickets directly from your conversation about the issue in Slack.\n
+  ✍️ Define your team and invidual OKRs right from within Slack.\n
+  🔔 Receive reminders when updates to OKRs are due and easily make updates without needing to click back and forth between windows.\n
+  📊 Check the real-time progress of any team or individual's OKRs.\n
+  🧘‍♀️ If an OKR is off-track, Ally's intelligent alerts can notify you in a channel helping to keep your company's goals on track.\n
 <https://slack.com/apps/A7R0YK8HW-ally|More info about Ally>\n
 `;
 
 const hiveMessage = `
 *Here's selling points for Hive*\n
-  📲 Create and assign Hive tickets directly from your conversation about the issue in Slack.\n
+  Jump directly to your Slack channels from Hive making it easy to start collaborating.\n
+  Drag and drop actions directly to your Slack channels.\n
+  Create actions in Hive directly in Slack using slash commands.\n
 <https://slack.com/apps/A1X4WCTD0-hive|More info about Hive>\n
 `;
 
 const voiceaMessage = `
 *Here's selling points for Voicea*\n
-  📲 Create and assign Voicea tickets directly from your conversation about the issue in Slack.\n
+  📲 Push Voicea meeting notes and action items to a Slack channel straight from Voicea to easily open any needed post-meeting conversations.\n
+  🎧 Link to Voicea allow users to listen to the meeting audio right from where the conversation is taking place in Slack.\n
 <https://slack.com/apps/A6KANRYUS-voicea|More info about Voicea>\n
 `;
 
 const sharedBoxMessage = `
 *Here's selling points for SharedBox*\n
-  📲 Create and assign SharedBox tickets directly from your conversation about the issue in Slack.\n
+  📥 SharedBox is a support-focused inbox that connects with any email (Gmail, Outlook, custom domains...).\n
+  📲 Send and receive emails right from within Slack.\n
+  🗣 Host internal conversations about important support emails without cluttering the email thread.\n
 <https://slack.com/apps/ABUHHCUHG-sharedbox|More info about SharedBox>\n
 `;
 
 const paymoMessage = `
-*Here's selling points for Paymo*\n
-  📲 Create and assign Paymo tickets directly from your conversation about the issue in Slack.\n
+*Paymo is a work and project management app that can be managed.*\n
+  📲 Create a new task in Paymo from right from your conversation in Slack (type /paymo add).\n
+  🔔 Get notified about all the tasks you have in Paymo to a single channel so your inbox doesn't get cluttered.\n
+  📤 Easily upload files from conversations in Slack to the linked Paymo project.\n
+  📝 Add a Slack message as task comment in Paymo without needing to toggle between windows.\n
+  ⏱ Start, stop, resume, and display information about the work timer.\n
 <https://slack.com/apps/AG3C73VPG-paymo|More info about Paymo>\n
 `;
 
 const incidentMessage = `
-*Here's selling points for Incident*\n
-  📲 Create and assign Incident tickets directly from your conversation about the issue in Slack.\n
+*Incident helps dev teams respond to downtimes and other bugs.*\n
+  📲 Create channels dedicated to bugs to focus your efforts. Conversations can take place in Slack right from when the incidient is reported.\n
+  🔔 Keep the rest of your company in the know with automated and personal updates right from the Slack channel.\n
 <https://slack.com/apps/ABN54TZ5J-incident|More info about Incident>\n
 `;
 
 const landriaMessage = `
-*Here's selling points for Landria*\n
-  📲 Create and assign Landria tickets directly from your conversation about the issue in Slack.\n
+*Landria handles your repeat questions.*\n
+  🛠 Landria uses A.I. to build up your FAQ answers automatically as you respond to new questions.\n
+  👩‍🏫 No more writing answers up into a Knowledge Base. With Landria, you can do both at once without having to leave Slack.\n
+  📲 Obviously, you have full ability to edit, delete, and add information.\n
 <https://slack.com/apps/AE3Q7T0BZ-landria|More info about Landria>\n
 `;
 
 const threadsMessage = `
-*Here's selling points for Threads*\n
-  📲 Create and assign Threads tickets directly from your conversation about the issue in Slack.\n
+*Threads tracks and prioritize Slack threads so you never lose them.*\n
+  💤 Rank or even snooze threads so you can reply at a better time.\n
+  📲 Pull your email into a private channel to bridge internal and external conversations.\n
+  👋 Share your emails that need an internal discussion with a new Slack thread.\n
+  📤 Reply to emails right from Slack.\n
 <https://slack.com/apps/A6WF338RW-threads|More info about Threads>\n
 `;
 
 const watchtowerMessage = `
-*Here's selling points for Watchtower DLP*\n
-  📲 Create and assign Watchtower DLP tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A2RPP3NFR-jira-cloud|More info about Watchtower DLP>\n
+*Watchtower protects your sensitive data in Slack.*\n
+  👩‍⚖️ Supports your compliance efforts with PCI, GDPR, HIPAA, SOX, and various other regulatory regimes.\n
+  🔎 Watchtower identifies business-critical data, customer PII (personally identifiable information, such as credit card numbers) and PHI (protected health information) and more across your Slack workspace.\n
+  📲 Instantly add DLP and data classification functionality across your Slack account.\n
+<https://slack.com/apps/AF0GH46UX-watchtower-dlp-for-slack|More info about Watchtower DLP>\n
 `;
 
 const indemandlyMessage = `
-*Here's selling points for Indemandly*\n
-  📲 Create and assign Indemandly tickets directly from your conversation about the issue in Slack.\n
+*Indemandly is a conversation marketing tool.*\n
+  🔔 Keep your email from getting cluttered with notifications by syncing them with a Slack channel where the entire team can stay up to date.\n
+  📤 Reply to customer inquiries right from within Slack.\n
 <https://slack.com/apps/ABC1XH3TN-indemandly|More info about Indemandly>\n
 `;
 
 const interbotMessage = `
-*Here's selling points for interbot*\n
-  📲 Create and assign interbot tickets directly from your conversation about the issue in Slack.\n
+*interbot connects support desks to Slack fast.*\n
+  📲 Adds a one-click share to your help desk (Help Scout, Freshdesk, Groove and more) so that team members can quickly post questions about support emails to Slack.\n
+  🙌 Discuss the support ticket with the team in the uncluttered space of Slack.\n
+  📤 Reply back or add a note to the ticket without ever needing to toggle back and forth between windows.\n
 <https://slack.com/apps/A2RPP3NFR-jira-cloud|More info about interbot>\n
 `;
 
 const standuplyMessage = `
-*Here's selling points for Standuply*\n
-  📲 Create and assign Standuply tickets directly from your conversation about the issue in Slack.\n
+*Standuply hosts asynchronous standups and more*\n
+  🏆 Trusted by 35,000 teams from Intel, IBM, Adobe and more.\n\n\n
+  🛠 Automate status meetings, retrospectives, 360 reviews, 1-on-1s, planning back-and-forths and more.\n
+  🎥 A remote team can answer questions via text, voice or video messages.\n
+  📅 Run multiple reports on a schedule or asynchronously at users' time zones.\n
+  💬 Customize questions using your language to support and improve team culture.\n
+  📝 Track work progress, business metrics, obstacles and team happiness 24x7.\n\n\n
+  📊 Integrations: JIRA, Trello, GitHub, Gitlab, Bitbucket, Google Analytics and more to come.\n
+  📥 Extract data from Asana, Redmine, Wrike, Basecamp, MySQL, MongoDB, PostgreSQL to Slack.\n
 <https://slack.com/apps/A355V71K7-standupiy|More info about Standuply>\n
 `;
 
 const kyberMessage = `
-*Here's selling points for Kyber*\n
-  📲 Create and assign Kyber tickets directly from your conversation about the issue in Slack.\n
-<http://httpsslack.com/apps/A0EP69E58-kyber|More info about Kyber>\n
+*Kyber coordinates and automates your team's work (especially multi time-zone teams).*\n
+  ✅ Assign, schedule and complete tasks for projects. No toggling between project management tools and emails.\n
+  🙌 Automate daily standup notifications to keep the team up-to-date.\n
+  📊 Make decision faster with polls.\n
+  ❓ Check the pulse of your team with surveys.\n
+  🗣 Turn Slack messages into actionable tasks, and schedule best times for messages to be sent.\n
+  📅 Send, accept, decline meeting invites.\n
+<https://slack.com/apps/A0EP69E58-kyber|More info about Kyber>\n
 `;
 
 const driftMessage = `
-*Here's selling points for Drift*\n
-  📲 Create and assign Drift tickets directly from your conversation about the issue in Slack.\n
+*Drift manages convos with sales leads.*\n
+  🗣 Talk to your potential customers right from Slack.\n
+  🔔 Real time alerts when leads are on your website (that don't clutter your inbox).\n
+  👩‍🌾 Pull in a sales leads personal details without having to leave Slack.\n
 <https://slack.com/apps/A0K07JA1H-drift|More info about Drift>\n
 `;
 
 const statsbotMessage = `
-*Here's selling points for Statsbot*\n
-  📲 Create and assign Statsbot tickets directly from your conversation about the issue in Slack.\n
+*Statsbot provides quick access to your analytics.*\n
+  📤 Connect your database or Google Analytics to Statsbot in one click.\n
+  📊 Easily track metrics, build funnels and cohorts (even if you don't know SQL!).\n
+  📅 Schedule reports to check and report on metrics on a regular basis.\n
+  ❓ Ask Statsbot data questions in a natural language and get reports back.\n
+  👋 Share your data insights with the whole team, partners or investors.\n
+  🔔 Get immediate notifications on important events in your database\n>(For example, when a certain product is out of stock, or if you lost a valuable customer).\n
 <https://slack.com/apps/A0GP9E18S-statsbot|More info about Statsbot>\n
 `;
 
 const surveyMonkeyMessage = `
-*Here's selling points for SurveyMonkey*\n
-  📲 Create and assign SurveyMonkey tickets directly from your conversation about the issue in Slack.\n
+*SurveyMonkey provides online polls and surveys.*\n
+  📲 Collect survey responses, invite collaborators and share results with your Slack team without toggling back-and-forth to SurveyMonkey.\n
+  🔔 Post survey set up notifications in a single channel so where your communicate doesn't get cluttered.\n
 <https://slack.com/apps/A4JEUJH4M-surveymonkey|More info about SurveyMonkey>\n
 `;
 
 const troopsMessage = `
-*Here's selling points for Troops (a Salesforce integration)*\n
-  📲 Create and assign Troops (a Salesforce integration) tickets directly from your conversation about the issue in Slack.\n
+*Troops helps you manage Salesforce.*\n
+  📲 Search and update any Salesforce record without ever leaving Slack (both standard and custom objects).\n
+  📊 Schedule or pull any of your existing Salesforce reports to Slack so everyone can stay up-to-date on KPIs.\n
+  🎉 Share wins with your team with auto-noticications when someone closes a deal or hits a key milestone.\n
 <https://slack.com/apps/A0T3W4EAX-troops|More info about Troops (a Salesforce integration)>\n
 `;
 
 const obieMessage = `
-*Here's selling points for Obie*\n
-  📲 Create and assign Obie tickets directly from your conversation about the issue in Slack.\n
+*Obie is an internal wiki.*\n
+  📤 Access the information you need from the apps you use everyday enable better product development and support.\n
+  📲 Reduce repetitive questions, automate simple tasks and enable fast access to knowledge.\n\n
+  🔁 App integrations — Google Drive, Zendesk, Confluence, Salesforce, Trello, Jira, Dropbox, Evernote, Box, ReadMe and GitHub.\n
+
+  👩‍🏫 *Support:* Quickly access support documentation, FAQs, and product info.\n
+  🕺 *Sales:* Rapidly enable new and existing reps with the right collateral, playbooks, case studies and more.\n
+  👨‍💼 *People/All:*  Onboard employees more efficiently, and build a company wiki for better organization of company knowledge.\n
+  👩‍💻 *IT/Dev Ops:* Create a self-service process for finding information and routing requests to your service desk without leaving Slack.\n\n
 <https://slack.com/apps/A0ZP4FD0B-obie|More info about Obie>\n
 `;
 
 const anyDoMessage = `
-*Here's selling points for Any.do*\n
-  📲 Create and assign Any.do tickets directly from your conversation about the issue in Slack.\n
+*Any.do is a task management app.*\n
+  ✅ Add tasks, get reminders and assign tasks to anyone right from the conversations taking place in Slack.\n
 <https://slack.com/apps/A3LU9DDEU-anydo|More info about Any.do>\n
 `;
 
 const revealMessage = `
-*Here's selling points for Reveal (for Facebook Ads)*\n
-  📲 Create and assign Reveal (for Facebook Ads) tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A2GL4FKCZ-reveal|More info about Reveal (for Facebook Ads)>\n
+*Reveal helps with Facebook Ads and social platforms.*\n
+  🔔 Keep your whole team aware of important changes in ad performance with notifications and alerts to any Slack channel.\n
+  📅 Schedule ongoing share of marketing and social reports with stakeholders in a Slack channel.\n
+  ❓ Ask Reveal Bot questions about your ad performance and get your metrics in an instant. Then collaborate with your team right from Slack.\n
+  📤 Connects with — Facebook Ads, Facebook Insights, Twitter, Google AdWords, YouTube.\n
+<https://slack.com/apps/A2GL4FKCZ-reveal|More info about Reveal>\n
 `;
 
 const kipwiseMessage = `
-*Here's selling points for Kipwise*\n
-  📲 Create and assign Kipwise tickets directly from your conversation about the issue in Slack.\n
+*Kipwise is a knowledge management tool.*\n
+  📲 Create and search for saved knowledge, without leaving Slack (/kipwise search [keywords])'.\n
+  📤 Discuss something important in chat? Turn Slack messages into team wiki docs without ever leaving Slack.\n
+  ❓ Assign unanswered questions to a DRI. The Q&A will be saved to Kipwise automatically when your teammate answers.\n
+  📄 Organize shared articles, links and images with team annotations without needing to toggle between windows.\n
+  👋 Edit share access to information within Slack.\n
+  🔁 Integrates seamlessly with Google Drive and Confluence.\n
 <https://slack.com/apps/A7W497ADD-kipwise|More info about Kipwise>\n
 `;
 
 const hubspotMessage = `
-*Here's selling points for Hubspot*\n
-  📲 Create and assign Hubspot tickets directly from your conversation about the issue in Slack.\n
+*Hubspot is a CRM.*\n
+  📲 Create and update tasks and tickets within Slack.
+  🔀 Associate tickets and tasks with a contact, company, or deal in HubSpot without leaving Slack.
+  📤 Respond to incoming chats within Slack and your Hubspot account stays in sync.
+  🕵️‍♂️ Search contacts, companies, tasks, tickets, knowledge base articles and more directly within Slack.
+  🔔 Receive notifications for reminders, mentions, form submissions, and more within Slack.
 <https://slack.com/apps/A9RRCCG73-hubspot|More info about Hubspot>\n
 `;
 
@@ -1268,14 +1347,19 @@ const hubspotBlogsMessage = `
 `;
 
 const growthbotMessage = `
-*Here's selling points for Growthbot (by Hubspot)*\n
-  📲 Create and assign Growthbot (by Hubspot) tickets directly from your conversation about the issue in Slack.\n
+*Growthbot helps marketers access the info they need (by Hubspot).*\n
+  📄 Discover the keywords competitors rank for.
+  🕵️‍♂️ Get helpful info on someone from their email.
+  📊 Find prospective customers who are using your competitors system.
+  🏆 Unconver top posts that are driving traffic to your competitors.
 <https://slack.com/apps/A1JUFE7PA-growthbot|More info about Growthbot (by Hubspot)>\n
 `;
 
 const automateIOMessage = `
-*Here's selling points for Automate.io*\n
-  📲 Create and assign Automate.io tickets directly from your conversation about the issue in Slack.\n
+*Automate.io is a no-code API (think Zapier).*\n
+  🛠 Connect the tools you use everyday to automate mundane tasks.\n
+  📤 Apps include Salesforce, Trello, Google Sheets, Typeform, Gmail, Jira, Asana, Pipedrive, Hubspot, Zendesk, Basecamp, Google apps and 80+ others.\n
+  🔀 Use case — Someone fills out a Typeform. Automate.io adds a lead in Salesforce and notifies the sales team in Slack.\n
 <https://slack.com/apps/A0M3SB287-automateio|More info about Automate.io>\n
 `;
 
@@ -1287,26 +1371,28 @@ const attentiveMessage = `
 
 const visibleVCMessage = `
 *Here's selling points for Visible VC*\n
-  📲 Create and assign Visible VC tickets directly from your conversation about the issue in Slack.\n
+  Schedule and send updates right to your own Slack channels.
 <https://slack.com/apps/A8YM3GLUV-visible|More info about Visible VC>\n
 `;
 
 const translateMessage = `
-*Here's selling points for Translate*\n
-  📲 Create and assign Translate tickets directly from your conversation about the issue in Slack.\n
-<http://httpsslack.com/apps/A0ZJS6Z7E-translate|More info about Translate>\n
+*Translate translates text into different languages.*\n
+  ✍️ Translate text into different languages right from within Slack.\n
+  ⏳ Huge timesaver for teams communicating in multiple languages.\n
+<http://slack.com/apps/A0ZJS6Z7E-translate|More info about Translate>\n
 `;
 
 const iftttMessage = `
-*Here's selling points for IFTTT*\n
-  📲 Create and assign IFTTT tickets directly from your conversation about the issue in Slack.\n
+*IFTTT is a no-code api (think Zapier).*\n
+  🔀 Connect Slack to any IFTTT action to automate time-sucking tasks.\n
 <https://slack.com/apps/A028LGAFF-ifttt|More info about IFTTT>\n
 `;
 
 const inVisionAppMessage = `
-*Here's selling points for inVision App*\n
-  📲 Create and assign inVision App tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A08N434LS-invision-app|More info about inVision App>\n
+*InVision App is a design app.*\n
+  📲 Make project updates visible to your whole team in one collaborative Slack channel.\n
+  👋 Share your design work directly to Slack in one-click from within Studio with <https://slack.com/apps/AFJA1BLBW-invision-studio-share|Studio Share>.\n
+<https://slack.com/apps/A08N434LS-invision-app|More info about InVision App>\n
 `;
 
 const inVisionStudioShareMessage = `
@@ -1316,236 +1402,275 @@ const inVisionStudioShareMessage = `
 `;
 
 const googleHangoutsMessage = `
-*Here's selling points for Google Hangouts*\n
-  📲 Create and assign Google Hangouts tickets directly from your conversation about the issue in Slack.\n
+*Google Hangouts is a video conferencing app.*\n
+  🎥 Start a Hangout in any channel by typing just a few letters (/hangout).\n
+  📤 Invite team members to the Hangout without ever toggling between apps.\n
 <https://slack.com/apps/A0F7YS351-google-hangouts|More info about Google Hangouts>\n
 `;
 
 const meekanMessage = `
-*Here's selling points for Meekan*\n
-  📲 Create and assign Meekan tickets directly from your conversation about the issue in Slack.\n
+*Meekan is a meeting scheduling app.*\n
+  🏆 Trusted by over 20,000 teams.\n
+  📅 Ask Meekan to search everyone's schedule and it sets up the best time for everyone to meet.\n
+  📲 Find and book available rooms without needing to toggle windows.\n
+  ↩️ Move existing meetings right from a Slack convo.\n
+  📄 Get a quick view of what is on your calendar without needing to open it.\n
 <https://slack.com/apps/A0G51AT60-meekan-scheduling|More info about Meekan>\n
 `;
 
 const blueJeansMessage = `
-*Here's selling points for BlueJeans*\n
-  📲 Create and assign BlueJeans tickets directly from your conversation about the issue in Slack.\n
+*BlueJeans is a video conferencing app.*\n
+  🎥 Start, join and invite anyone to BlueJeans video meetings right from any Slack channel (/bluejeans).\n
 <https://slack.com/apps/AGC34MF1T-bluejeans|More info about BlueJeans>\n
 `;
 
 const donutMessage = `
-*Here's selling points for Donut*\n
-  📲 Create and assign Donut tickets directly from your conversation about the issue in Slack.\n
+*Donut pairs coworkers for get-to-know meetings.*\n
+  👋 Launch a random coffee or lunch pairing program improving team and company culture.\n
+  📊 Get insights on your team’s connections so you can ensure your culture improves.\n
+  ☑️ Create a structured, scalable onboarding checklists that are automatically delivered and checked off right within Slack.\n
 <https://slack.com/apps/A11MJ51SR-donut|More info about Donut>\n
 `;
 
 const workbotMessage = `
-*Here's selling points for Workbot (by Workato)*\n
-  📲 Create and assign Workbot (by Workato) tickets directly from your conversation about the issue in Slack.\n
+*Workbot helps you configure mundane workflows (by Workato)*\n
+  🔀 Connect thousands of apps to automatically run everyday work.\n
+  *💼 Sales* — Bring new lead opportunities and details (Salesforce and tons more) into a specific Slack channel for Sales reps to quickly claim and connect with.\n
+  *👩‍🏫 Support* — Post new support tickets or social media mentions into a specific Slack channel for Support team to track, claim and respond to.\n
+*📦 Ecommerce* — Post details of new orders from your eCommerce store (Shopify, BigCommerce, WooCommerce, + more) to stay on top orders.\n
+*🛠 Project Management* — Move important tasks straight from a Slack conversation into a project management app (Asana, Trello, Basecamp) when you star a message.\n
 <https://slack.com/apps/A0HVDHQ8Z-workbot|More info about Workbot (by Workato)>\n
 `;
 
 const oneBarMessage = `
-*Here's selling points for OneBar*\n
-  📲 Create and assign OneBar tickets directly from your conversation about the issue in Slack.\n
+*OneBar is an internal wiki*\n
+  🕵️‍♂️ Search for answers in the knowledge base from your DM without leaving Slack.\n
+  ❓ Assign unresolved questions to teammates so they can add answers to OneBar.\n
+  📤 Save whole conversations into the knowledge base right from the conversation itself.\n
+  📲 Organize OneBar information — deduplicate, tag and link to other questions or content.\n
 <https://slack.com/apps/A6U5NG15Z-onebar|More info about OneBar>\n
 `;
 
 const newRelicMessage = `
-*Here's selling points for New Relic*\n
-  📲 Create and assign New Relic tickets directly from your conversation about the issue in Slack.\n
+*New Relic tracks uptime for websites.*\n
+  🔔 Get updates in Slack when an alert is triggered in New Relic. Collaboate on those notifications right from the Slack channel.\n
 <https://slack.com/apps/A0F827KK2-new-relic|More info about New Relic>\n
 `;
 
 const crashlyticsMessage = `
-*Here's selling points for Crashlytics*\n
-  📲 Create and assign Crashlytics tickets directly from your conversation about the issue in Slack.\n
+*Crashlytics tracks uptime for websites.*\n
+  🔔 Post crash summaries to a channel in Slack where your team can get the notification and decide on next steps.\n
 <https://slack.com/apps/A0F81R5CP-crashlytics|More info about Crashlytics>\n
 `;
 
 const amplitudeMessage = `
-*Here's selling points for Amplitude*\n
-  📲 Create and assign Amplitude tickets directly from your conversation about the issue in Slack.\n
+*Amplitude is an app metric tracking tool.*\n
+  📤 Sharing insights faster and easier with automatically transforming links that show image previews and expanded details about analysis.\n
+  📲 Add charts to Amplitude dashboards or pin dashboards to their sidebar without ever leaving the conversation.\n
 <https://slack.com/apps/A2BQMRA7J-amplitude|More info about Amplitude>\n
 `;
 
 const arcMessage = `
-*Here's selling points for Arc (for Google Analytics)*\n
-  📲 Create and assign Arc (for Google Analytics) tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A0G0Q15F1-arc|More info about Arc (for Google Analytics)>\n
+*Arc shares Google Analytics reports with Slackmates*\n
+  📲 Delivers scheduled Google Analytic reports to a desired Slack channel where your team can stay updated and collaborate.\n
+<https://slack.com/apps/A0G0Q15F1-arc|More info about Arc>\n
 `;
 
 const closingBellMessage = `
-*Here's selling points for ClosingBell*\n
-  📲 Create and assign ClosingBell tickets directly from your conversation about the issue in Slack.\n
+*ClosingBell provides information about stocks.*\n
+  📈 Get information about any U.S. stock or ETF right from within any Slack channel.\n
 <https://slack.com/apps/A0KK1CHUN-closingbell|More info about ClosingBell>\n
 `;
 
 const kiwiMessage = `
-*Here's selling points for Kiwi (for Tableau)*\n
-  📲 Create and assign Kiwi (for Tableau) tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A3S6N33JA-kiwi|More info about Kiwi (for Tableau)>\n
+*Kiwi connects Tableau to Slack*\n
+  🏆 Trusted by over 1,000 teams and hundred thousands of users around the world.\n
+  📅 Schedule Tableau reports to be pushed to channels, teams or individuals automatically.\n
+  🕵️‍♂️ Search through all Tableau report names and filters to get you what you need.\n
+  📲 Request, preview and share any Tableau report.\n
+<https://slack.com/apps/A3S6N33JA-kiwi|More info about Kiwi>\n
 `;
 
 const faxToSlackMessage = `
-*Here's selling points for FaxToSlack*\n
-  📲 Create and assign FaxToSlack tickets directly from your conversation about the issue in Slack.\n
+*FaxToSlack adds fax to your Slack communications.*\n
+  📄 Incoming faxes are instantly added to your selected Slack channel.\n
+  🕵️‍♂️ Faxes are searchable and shareable within Slack.\n
+  🙌 Improves collaboration by enabling team members to comment share faxes within Slack.\n
 <https://slack.com/apps/A0MC3TC4U-faxtoslack|More info about FaxToSlack>\n
 `;
 
 const appearInMessage = `
-*Here's selling points for appear.in*\n
-  📲 Create and assign appear.in tickets directly from your conversation about the issue in Slack.\n
+*appear.in provides video conferences*\n
+  🎥 Start a video conference without leaving the conversation in Slack, making it easy for others to join the call.\n
 <https://slack.com/apps/A0F7YS1JP-appearin|More info about appear.in>\n
 `;
 
 const skypeMessage = `
-*Here's selling points for Skype*\n
-  📲 Create and assign Skype tickets directly from your conversation about the issue in Slack.\n
+*Skype provides video conferences.*\n
+  🎥 Start a video conference without leaving the conversation in Slack (/skype), making it easy for others to join the call.\n
 <https://slack.com/apps/A4QV4C23C-skype|More info about Skype>\n
 `;
 
 const pasteMessage = `
-*Here's selling points for Paste*\n
-  📲 Create and assign Paste tickets directly from your conversation about the issue in Slack.\n
+*Paste is a presentation tool.*\n
+  🔔 Post notifications of updates to your Paste in a Slack channel keeping your everyday communication uncluttered.\n
+  🙌 Quickly and effectively your team’s input on your most recent direction.\n
 <https://slack.com/apps/A3WNR7LHW-paste|More info about Paste>\n
 `;
 
 const intercomMessage = `
-*Here's selling points for Intercom*\n
-  📲 Create and assign Intercom tickets directly from your conversation about the issue in Slack.\n
+*Intercom helps you talk to your online customers.*\n
+  📲 Respond to customer messages instantly from Slakc (the app you already have open all day) reducing wasted time switching between tools.\n
+  🔁 Chat, qualify leads and close deals and tickets right from Slack, and everything syncs seamlessly with Intercom.\n
 <https://slack.com/apps/A40CLA0DP-intercom|More info about Intercom>\n
 `;
 
 const halpMessage = `
-*Here's selling points for Halp*\n
-  📲 Create and assign Halp tickets directly from your conversation about the issue in Slack.\n
+*Halp is for internal support teams, like IT.*\n
+   📲 Turn direct messages into a trackable tickets or create tickets without ever leaving the conversation.\n
+   📊 Triage tickets in a private team channel where your team can assign, edit and reply to tickets all in Slack.\n
+   🔀 Automatically route specific tickets to relevant teams.\n
+   🔔 Employees receive updates about their tickets in direct messages where they can provide more details, answer questions, close their own tickets, and rate their experience.\n
 <https://slack.com/apps/ADBM44F4G-halp|More info about Halp>\n
 `;
 
 const freshdeskMessage = `
-*Here's selling points for Freshdesk*\n
-  📲 Create and assign Freshdesk tickets directly from your conversation about the issue in Slack.\n
+*Freshdesk is a multi-channel support desk (phone, email, social, etc.).*\n
+   🔔 Post ticket notifications in Slack automatically so that your team is aware of what is happening in your helpdesk.\n
+   📲 Convert discussion with peers and customers directly to Freshdesk support tickets all from Slack.\n
 <https://slack.com/apps/A03RG929F-freshdesk|More info about Freshdesk>\n
 `;
 
 const typeformMessage = `
-*Here's selling points for Typeform*\n
-  📲 Create and assign Typeform tickets directly from your conversation about the issue in Slack.\n
+*Typeform is a dynamic online form.*\n
+  📲 Get real-time Typeform responses in a specific Slack channel keeping your daily communication uncluttered.\n
+  🔔 Get notifications when forms are submitted with answer previews making it easy to begin any needed collaboration.\n
+  ❤️ In short, all your respondents' answers appear wherever you want, so you don't spend time in other apps fishing out missing info.\n
 <https://slack.com/apps/AD6SC3RT6-typeform|More info about Typeform>\n
 `;
 
 const smallchatMessage = `
-*Here's selling points for Smallchat*\n
-  📲 Create and assign Smallchat tickets directly from your conversation about the issue in Slack.\n
+*Smallchat is a real-time website chat app.*\n
+  📲 No need to add another piece of software to your workflow — communicate with customers in threaded Slack messages.\n
 <https://slack.com/apps/A3U4933EJ-smallchat|More info about Smallchat>\n
 `;
 
 const chatlioMessage = `
-*Here's selling points for Chatlio*\n
-  📲 Create and assign Chatlio tickets directly from your conversation about the issue in Slack.\n
+*Chatlio is a chat app for website visitors.*\n
+  📲 No need to add another piece of software to your workflow — communicate with customers in threaded Slack messages.\n
 <https://slack.com/apps/A03BS4Q25-chatlio|More info about Chatlio>\n
 `;
 
 const helpScoutMessage = `
-*Here's selling points for Help Scout*\n
-  📲 Create and assign Help Scout tickets directly from your conversation about the issue in Slack.\n
+*Help Scout is a help desk for small businesses.*\n
+  🔔 Receive notifications when a conversation is created, assigned, updated, replied to, and deleted keeping your entire team up to date.\n
 <https://slack.com/apps/A0F81R6CX-help-scout|More info about Help Scout>\n
 `;
 
 const guruMessage = `
-*Here's selling points for Guru*\n
-  📲 Create and assign Guru tickets directly from your conversation about the issue in Slack.\n
+*Guru is an internal wiki.*\n
+  📲 Capture knowledge as its being exchanged in Slack and add it to your Guru knowledge base.\n
+  🕵️‍♂️ Search for the information you need without ever leaving the conversation in Slack.\n
+  📤 Provide Guru knowledge cards to team mates right from the Slack chat.\n
 <https://slack.com/apps/A0FHVR2R0-guru|More info about Guru>\n
 `;
 
 const liveChatMessage = `
-*Here's selling points for Live Chat*\n
-  📲 Create and assign Live Chat tickets directly from your conversation about the issue in Slack.\n
+*Live Chat is a chat app for website visitors.*\n
+  📲 No need to add another piece of software to your workflow — communicate with customers in threaded Slack messages.\n
 <https://slack.com/apps/A0QKJAXHT-live-chat|More info about Live Chat>\n
 `;
 
 const cloudAppMessage = `
-*Here's selling points for CloudApp*\n
-  📲 Create and assign CloudApp tickets directly from your conversation about the issue in Slack.\n
+*CloudApp helps you capture screen recordings.*\n
+  📲 Instantly share what you created to Slack. No searching your desktop for a screenshot/video or waiting for it to upload.\n
+  🖥 Automatic previews allows your team to collaborate and discuss the bug you've just reported or the idea you just shared.\n
 <https://slack.com/apps/A3P50F40L-cloudapp|More info about CloudApp>\n
 `;
 
 const yodelMessage = `
-*Here's selling points for Yodel (Phone System)*\n
-  📲 Create and assign Yodel (Phone System) tickets directly from your conversation about the issue in Slack.\n
-<https://slack.com/apps/A0MGACTEH-yodelio-phone-system|More info about Yodel (Phone System)>\n
+*Yodel connects your phone line to Slack.*\n
+   📲 Receive and start voice calls straight in your Slack channels.\n
+   ↩️ Get live call transcriptions and route calls to the correct team member.\n
+<https://slack.com/apps/A0MGACTEH-yodelio-phone-system|More info about Yodel>\n
 `;
 
 const crispMessage = `
-*Here's selling points for Crisp*\n
-  📲 Create and assign Crisp tickets directly from your conversation about the issue in Slack.\n
+*Crisp is a website chat app.*\n
+  📲 No need to add another piece of software to your workflow — communicate with customers in threaded Slack messages.\n
 <https://slack.com/apps/A1TPC7361-crisp|More info about Crisp>\n
 `;
 
 const zeplinMessage = `
-*Here's selling points for Zeplin*\n
-  📲 Create and assign Zeplin tickets directly from your conversation about the issue in Slack.\n
+*Zeplin is an internal wiki for devs and designers.*\n
+  🔔 Receive updates in a Slack channel when new designs are uploaded or updated.\n
+  📲 Get messages about style guides, specs and assets right in Slack.\n
 <https://slack.com/apps/A08MGBLJV-zeplin|More info about Zeplin>\n
 `;
 
 const dropboxPaperMessage = `
-*Here's selling points for Dropbox Paper*\n
-  📲 Create and assign Dropbox Paper tickets directly from your conversation about the issue in Slack.\n
+*Dropbox Paper*\n
+  Create docs, get feedback from the team, and manage projects in a single space built for working together.
+  🕵️‍♂️ Search your Paper docs while in the conversation in Slack.
+  📄 Create new docs without leaving Slack.
+  🖥 Get automatic detailed previews when you share docs on Slack initiating collaboration without toggling windows.
 <https://slack.com/apps/A0L4BKBG9-dropbox-paper|More info about Dropbox Paper>\n
 `;
 
 const lucidChartMessage = `
-*Here's selling points for Lucidchart*\n
-  📲 Create and assign Lucidchart tickets directly from your conversation about the issue in Slack.\n
+*Lucidchart is a tool to create flow charts and mockups.*\n
+  📲 Create a new diagram without having to leave your conversation in Slack.\n
+  👋 Invite others to collaborate on a diagram right from your communication space in Slack.\n
+  📤 Share diagrams directly into Slack right from Lucidchart's app.\n
 <https://slack.com/apps/A0G8S1LSC-lucidchart|More info about Lucidchart>\n
 `;
 
 const notionMessage = `
-*Here's selling points for Notion*\n
-  📲 Create and assign Notion tickets directly from your conversation about the issue in Slack.\n
+*Notion hosts your docs, internal wiki, and tasks.*\n
+  📤 Connect any Notion page to Slack by clicking the "Slack" button in the top bar to start collaborting with teammates in Slack.\n
 <https://slack.com/apps/A0VK5EP7Z-notion|More info about Notion>\n
 `;
 
 const canvaMessage = `
-*Here's selling points for Canva*\n
-  📲 Create and assign Canva tickets directly from your conversation about the issue in Slack.\n
+*Canva is a design tool.*\n
+  📤 Connect any Canva document to Slack and start collaborting with teammates in Slack.\n
 <https://slack.com/apps/AAALLM8KZ-canva|More info about Canva>\n
 `;
 
 const moqupsMessage = `
-*Here's selling points for Moqups*\n
-  📲 Create and assign Moqups tickets directly from your conversation about the issue in Slack.\n
+*Moqups is a tool to create mockups and wireframes.*\n
+  🔔 Get notifications of comments and project updates in your Slack channel, so that your team can quickly see changes to projects and get involved with feedback.\n
 <https://slack.com/apps/A4Y4RV4TD-moqups|More info about Moqups>\n
 `;
 
 const marvelMessage = `
-*Here's selling points for Marvel*\n
-  📲 Create and assign Marvel tickets directly from your conversation about the issue in Slack.\n
+*Marvel is a tool to create mockups and wireframes.*\n
+  🔔 Get notifications of comments and updates so that your team can quickly see changes to projects and get involved with feedback.\n
 <https://slack.com/apps/A0GJE163D-marvel|More info about Marvel>\n
 `;
 
 const sketchboardMessage = `
-*Here's selling points for Sketchboard*\n
-  📲 Create and assign Sketchboard tickets directly from your conversation about the issue in Slack.\n
+*Sketchboard is a dynamic whiteboard.*\n
+  📤 Create a new whiteboard without having to leave your conversation in Slack.\n
 <https://slack.com/apps/A02NEMM42-sketchboard|More info about Sketchboard>\n
 `;
 
 const abstractMessage = `
-*Here's selling points for Abstract*\n
-  📲 Create and assign Abstract tickets directly from your conversation about the issue in Slack.\n
+*Abstract manages your Sketch designs.*\n
+  🔔 Get notifications of all activity from your team members (including commits, new branches, comments, projects, and more) to Slack where you can collaborate and take actions.\n
 <https://slack.com/apps/A2C37QFN1-abstract|More info about Abstract>\n
 `;
 
 const muralMessage = `
-*Here's selling points for MURAL*\n
-  📲 Create and assign MURAL tickets directly from your conversation about the issue in Slack.\n
+*MURAL is a digital whiteboard.*\n
+  🔔 Get notifications of comments and updates to your whiteboards so that your team can quickly see changes to projects and get involved with feedback.\n
 <https://slack.com/apps/A4LV0TKR9-mural|More info about MURAL>\n
 `;
 
 const dribbbleMessage = `
 *Here's selling points for Dribbble*\n
-  📲 Create and assign Dribbble tickets directly from your conversation about the issue in Slack.\n
+  📤 Pull Dribbble shots into your Slack channels to start new conversations.\n
+  📲 Enter a search term or a color right in Slack and get a Dribble shot returned.\n
 <https://slack.com/apps/A0CGVC7K7-dribbble|More info about Dribbble>\n
 `;
 
