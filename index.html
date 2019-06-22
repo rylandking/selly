@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!-- <script src="/__/firebase/6.2.2/firebase-app.js"></script> -->
+    <!-- Add Firebase products that you want to use -->
+    <!-- <script src="/__/firebase/6.2.2/firebase-auth.js"></script>
+    <script src="/__/firebase/6.2.2/firebase-firestore.js"></script> -->
+    <!-- Initialize Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-firestore.js"></script>
+
+    <script type="text/javascript">
+      // Initialize Cloud Firestore through Firebase
+      firebase.initializeApp({
+        apiKey: 'AIzaSyAZfqM-RdBUySY-vKbjMy1KH78VSys5AJQ',
+        authDomain: 'selly-slack.firebaseapp.com',
+        databaseURL: "https://selly-slack.firebaseio.com",
+        storageBucket: "selly-slack.appspot.com",
+        projectId: 'selly-slack'
+      });
+    </script>
 
     <script type="text/javascript" src="index.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.2.0/firebase-app.js"></script>
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
 
     <meta charset="utf-8">
-    <title>Helping you sell more | Selly</title>
+    <title>🧞‍♀️ Helping you sell more. | Selly</title>
   </head>
   <body>
     <h1>👋🧞‍♀️ Meet Selly</h1>

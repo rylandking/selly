@@ -1,29 +1,28 @@
 // Express hosting
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const port = process.env.PORT || 1337;
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-//Check if server is listening
-app.get('/', function(req, res) {
-  res.status(200).send('Hello world');
-});
-
-app.listen(port, function() {
-  console.log('Yep! Listening on port ' + port);
-})
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const app = express();
+// const port = process.env.PORT || 1337;
+//
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
+//
+// //Check if server is listening
+// app.get('/', function(req, res) {
+//   res.status(200).send('Hello world');
+// });
+//
+// app.listen(port, function() {
+//   console.log('Yep! Listening on port ' + port);
+// });
 
 // Sellybot code
-
 const slackBot = require('slackbots');
 const axios = require('axios');
 
 const bot = new slackBot ({
-  token: 'TOKEN',
+  token: 'xoxb-655020203907-655007633314-jK5tnIn22RPOGy3aSdwAhkMV',
   name: 'selly'
 });
 
@@ -816,9 +815,9 @@ function handleMessage(message) {
    rssReply();
  } else if (diggCheck == true) {
    diggReply();
-  } else {
-    unknownKeywordsReply();
-  }
+ } else {
+  unknownKeywordsReply();
+ }
 }
 
 // Selly's reply messages
